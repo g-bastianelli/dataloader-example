@@ -1,4 +1,4 @@
-type Stuff = {
+export type Stuff = {
   id: number;
   value: string;
 };
@@ -11,7 +11,7 @@ export class RepositoryDeLaMuerte {
     });
   }
 
-  static getStuffByIds(ids: number[]): Promise<Stuff[]> {
+  static getStuffByIds(ids: readonly number[]): Promise<Stuff[]> {
     return new Promise(resolve => {
       console.log('Fetching stuffs with ids: ', ids);
       setTimeout(
